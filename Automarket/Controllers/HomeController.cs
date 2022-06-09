@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Automarket.Domain.Entity;
+using Automarket.Domain.Enum;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Automarket.Models;
@@ -20,7 +22,12 @@ namespace Automarket.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Car car = new Car
+            {
+                Name = "ToyotaCorolla",
+                MaxSpeed = 256
+            };
+            return View(car);
         }
 
         public IActionResult Privacy()
